@@ -1,0 +1,20 @@
+# Temel kütüphaneler
+python-dotenv        
+
+# LLM ve RAG framework'leri
+langchain             
+langchain-community   
+
+# Ollama entegrasyonu
+ollama                
+
+# Vector Database
+chromadb             
+sentence-transformers
+
+# Veri işleme
+pandas              
+numpy               
+
+# Yardımcı araçlar
+tqdm                 
