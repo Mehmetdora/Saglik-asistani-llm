@@ -9,6 +9,9 @@ from tqdm import tqdm
 soup = None
 
 
+
+
+
 def load_html(url):
     global soup
     html = requests.get(url).text
