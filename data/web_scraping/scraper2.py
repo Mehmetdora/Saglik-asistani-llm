@@ -20,663 +20,680 @@ Hastalık isimleri ve bu isimlerin açıklamasından çıkarılan başlıklar ;
 - nasıl tedavi edilir? 
 
 """
-hastalik_bolum_eslesme = [
-    (1, 20),
-    (2, 6),
-    (3, 17),
-    (4, 8),
-    (5, 17),
-    (6, 8),
-    (7, 2),
-    (8, 12),
-    (9, 14),
-    (10, 17),
-    (11, 16),
-    (12, 5),
-    (13, 4),
-    (14, 4),
-    (15, 4),
-    (16, 14),
-    (17, 4),
-    (18, 14),
-    (19, 13),
-    (20, 3),
-    (21, 6),
-    (22, 13),
-    (23, 13),
-    (24, 5),
-    (25, 9),
-    (26, 17),
-    (27, 15),
-    (28, 2),
-    (29, 17),
-    (30, 2),
-    (31, 4),
-    (32, 16),
-    (33, 12),
-    (34, 17),
-    (35, 1),
-    (36, 3),
-    (37, 2),
-    (38, 10),
-    (39, 16),
-    (40, 12),
-    (41, 12),
-    (42, 18),
-    (43, 11),
-    (44, 25),
-    (45, 25),
-    (46, 18),
-    (47, 13),
-    (48, 10),
-    (49, 25),
-    (50, 12),
-    (51, 4),
-    (52, 9),
-    (53, 6),
-    (54, 3),
-    (55, 4),
-    (56, 1),
-    (57, 12),
-    (58, 9),
-    (59, 1),
-    (60, 2),
-    (61, 5),
-    (62, 3),
-    (63, 22),
-    (64, 7),
-    (65, 11),
-    (66, 5),
-    (67, 18),
-    (68, 18),
-    (69, 3),
-    (70, 8),
-    (71, 9),
-    (72, 8),
-    (73, 3),
-    (74, 19),
-    (75, 19),
-    (76, 19),
-    (77, 19),
-    (78, 16),
-    (79, 3),
-    (80, 3),
-    (81, 3),
-    (82, 7),
-    (83, 3),
-    (84, 2),
-    (85, 17),
-    (86, 2),
-    (87, 22),
-    (88, 22),
-    (89, 2),
-    (90, 12),
-    (91, 19),
-    (92, 11),
-    (93, 17),
-    (94, 3),
-    (95, 12),
-    (96, 3),
-    (97, 3),
-    (98, 3),
-    (99, 15),
-    (100, 15),
-    (101, 14),
-    (102, 7),
-    (103, 14),
-    (104, 15),
-    (105, 1),
-    (106, 2),
-    (107, 4),
-    (108, 4),
-    (109, 4),
-    (110, 4),
-    (111, 17),
-    (112, 5),
-    (113, 1),
-    (114, 17),
-    (115, 12),
-    (116, 3),
-    (117, 9),
-    (118, 3),
-    (119, 6),
-    (120, 19),
-    (121, 13),
-    (122, 2),
-    (123, 17),
-    (124, 16),
-    (125, 14),
-    (126, 7),
-    (127, 17),
-    (128, 19),
-    (129, 5),
-    (130, 6),
-    (131, 17),
-    (132, 3),
-    (133, 20),
-    (134, 9),
-    (135, 3),
-    (136, 20),
-    (137, 17),
-    (138, 19),
-    (139, 19),
-    (140, 19),
-    (141, 19),
-    (142, 19),
-    (143, 19),
-    (144, 19),
-    (145, 19),
-    (146, 24),
-    (147, 5),
-    (148, 2),
-    (149, 12),
-    (150, 2),
-    (151, 16),
-    (152, 18),
-    (153, 3),
-    (154, 6),
-    (155, 17),
-    (156, 11),
-    (157, 14),
-    (158, 11),
-    (159, 3),
-    (160, 5),
-    (161, 12),
-    (162, 2),
-    (163, 20),
-    (164, 20),
-    (165, 20),
-    (166, 20),
-    (167, 20),
-    (168, 20),
-    (169, 20),
-    (170, 5),
-    (171, 15),
-    (172, 4),
-    (173, 3),
-    (174, 17),
-    (175, 17),
-    (176, 2),
-    (177, 14),
-    (178, 5),
-    (179, 3),
-    (180, 1),
-    (181, 3),
-    (182, 17),
-    (183, 9),
-    (184, 16),
-    (185, 17),
-    (186, 15),
-    (187, 5),
-    (188, 8),
-    (189, 7),
-    (190, 2),
-    (191, 16),
-    (192, 7),
-    (193, 7),
-    (194, 14),
-    (195, 16),
-    (196, 2),
-    (197, 25),
-    (198, 15),
-    (199, 3),
-    (200, 6),
-    (201, 9),
-    (202, 18),
-    (203, 16),
-    (204, 1),
-    (205, 19),
-    (206, 3),
-    (207, 17),
-    (208, 5),
-    (209, 5),
-    (210, 19),
-    (211, 16),
-    (212, 5),
-    (213, 19),
-    (214, 19),
-    (215, 17),
-    (216, 17),
-    (217, 22),
-    (218, 14),
-    (219, 17),
-    (220, 5),
-    (221, 6),
-    (222, 22),
-    (223, 10),
-    (224, 18),
-    (225, 18),
-    (226, 21),
-    (227, 10),
-    (228, 14),
-    (229, 10),
-    (230, 6),
-    (231, 17),
-    (232, 6),
-    (233, 2),
-    (234, 16),
-    (235, 9),
-    (236, 21),
-    (237, 12),
-    (238, 11),
-    (239, 9),
-    (240, 6),
-    (241, 5),
-    (242, 9),
-    (243, 18),
-    (244, 2),
-    (245, 13),
-    (246, 5),
-    (247, 13),
-    (248, 18),
-    (249, 17),
-    (250, 17),
-    (251, 17),
-    (252, 17),
-    (253, 16),
-    (254, 13),
-    (255, 7),
-    (256, 9),
-    (257, 6),
-    (258, 6),
-    (259, 25),
-    (260, 3),
-    (261, 10),
-    (262, 19),
-    (263, 2),
-    (264, 2),
-    (265, 2),
-    (266, 2),
-    (267, 7),
-    (268, 17),
-    (269, 16),
-    (270, 5),
-    (271, 5),
-    (272, 12),
-    (273, 17),
-    (274, 15),
-    (275, 6),
-    (276, 22),
-    (277, 14),
-    (278, 14),
-    (279, 13),
-    (280, 1),
-    (281, 1),
-    (282, 1),
-    (283, 1),
-    (284, 1),
-    (285, 25),
-    (286, 13),
-    (287, 18),
-    (288, 3),
-    (289, 3),
-    (290, 25),
-    (291, 18),
-    (292, 5),
-    (293, 14),
-    (294, 5),
-    (295, 5),
-    (296, 5),
-    (297, 18),
-    (298, 1),
-    (299, 5),
-    (300, 14),
-    (301, 11),
-    (302, 3),
-    (303, 7),
-    (304, 8),
-    (305, 18),
-    (306, 8),
-    (307, 9),
-    (308, 8),
-    (309, 10),
-    (310, 10),
-    (311, 10),
-    (312, 9),
-    (313, 5),
-    (314, 1),
-    (315, 9),
-    (316, 9),
-    (317, 8),
-    (318, 10),
-    (319, 5),
-    (320, 17),
-    (321, 17),
-    (322, 2),
-    (323, 11),
-    (324, 5),
-    (325, 16),
-    (326, 9),
-    (327, 11),
-    (328, 11),
-    (329, 12),
-    (330, 20),
-    (331, 17),
-    (332, 5),
-    (333, 17),
-    (334, 17),
-    (335, 3),
-    (336, 3),
-    (337, 3),
-    (338, 11),
-    (339, 9),
-    (340, 14),
-    (341, 3),
-    (342, 3),
-    (343, 5),
-    (344, 14),
-    (345, 4),
-    (346, 5),
-    (347, 14),
-    (348, 14),
-    (349, 14),
-    (350, 1),
-    (351, 1),
-    (352, 13),
-    (353, 14),
-    (354, 5),
-    (355, 5),
-    (356, 18),
-    (357, 7),
-    (358, 9),
-    (359, 14),
-    (360, 14),
-    (361, 9),
-    (362, 17),
-    (363, 2),
-    (364, 1),
-    (365, 2),
-    (366, 17),
-    (367, 17),
-    (368, 12),
-    (369, 14),
-    (370, 2),
-    (371, 2),
-    (372, 5),
-    (373, 14),
-    (374, 12),
-    (375, 12),
-    (376, 3),
-    (377, 12),
-    (378, 12),
-    (379, 19),
-    (380, 9),
-    (381, 19),
-    (382, 14),
-    (383, 3),
-    (384, 3),
-    (385, 3),
-    (386, 3),
-    (387, 19),
-    (388, 3),
-    (389, 13),
-    (390, 3),
-    (391, 3),
-    (392, 17),
-    (393, 9),
-    (394, 9),
-    (395, 9),
-    (396, 9),
-    (397, 17),
-    (398, 17),
-    (399, 17),
-    (400, 17),
-    (401, 17),
-    (402, 2),
-    (403, 12),
-    (404, 17),
-    (405, 17),
-    (406, 4),
-    (407, 17),
-    (408, 18),
-    (409, 16),
-    (410, 16),
-    (411, 16),
-    (412, 13),
-    (413, 11),
-    (414, 7),
-    (415, 6),
-    (416, 4),
-    (417, 13),
-    (418, 3),
-    (419, 12),
-    (420, 2),
-    (421, 19),
-    (422, 3),
-    (423, 3),
-    (424, 3),
-    (425, 8),
-    (426, 8),
-    (427, 1),
-    (428, 1),
-    (429, 1),
-    (430, 1),
-    (431, 1),
-    (432, 13),
-    (433, 14),
-    (434, 13),
-    (435, 5),
-    (436, 1),
-    (437, 14),
-    (438, 5),
-    (439, 5),
-    (440, 1),
-    (441, 14),
-    (442, 1),
-    (443, 16),
-    (444, 5),
-    (445, 14),
-    (446, 3),
-    (447, 3),
-    (448, 3),
-    (449, 9),
-    (450, 17),
-    (451, 17),
-    (452, 9),
-    (453, 17),
-    (454, 2),
-    (455, 2),
-    (456, 8),
-    (457, 14),
-    (458, 5),
-    (459, 11),
-    (460, 8),
-    (461, 17),
-    (462, 2),
-    (463, 12),
-    (464, 12),
-    (465, 2),
-    (466, 5),
-    (467, 2),
-    (468, 14),
-    (469, 18),
-    (470, 3),
-    (471, 1),
-    (472, 1),
-    (473, 12),
-    (474, 6),
-    (475, 5),
-    (476, 17),
-    (477, 2),
-    (478, 2),
-    (479, 2),
-    (480, 2),
-    (481, 13),
-    (482, 14),
-    (483, 2),
-    (484, 3),
-    (485, 3),
-    (486, 3),
-    (487, 3),
-    (488, 18),
-    (489, 3),
-    (490, 3),
-    (491, 17),
-    (492, 13),
-    (493, 14),
-    (494, 3),
-    (495, 17),
-    (496, 9),
-    (497, 17),
-    (498, 12),
-    (499, 17),
-    (500, 8),
-    (501, 12),
-    (502, 8),
-    (503, 8),
-    (504, 6),
-    (505, 12),
-    (506, 2),
-    (507, 6),
-    (508, 10),
-    (509, 10),
-    (510, 1),
-    (511, 1),
-    (512, 10),
-    (513, 1),
-    (514, 17),
-    (515, 3),
-    (516, 3),
-    (517, 3),
-    (518, 13),
-    (519, 14),
-    (520, 14),
-    (521, 3),
-    (522, 7),
-    (523, 7),
-    (524, 7),
-    (525, 10),
-    (526, 16),
-    (527, 18),
-    (528, 3),
-    (529, 2),
-    (530, 2),
-    (531, 2),
-    (532, 2),
-    (533, 2),
-    (534, 2),
-    (535, 2),
-    (536, 11),
-    (537, 17),
-    (538, 5),
-    (539, 5),
-    (540, 5),
-    (541, 14),
-    (542, 8),
-    (543, 8),
-    (544, 8),
-    (545, 8),
-    (546, 2),
-    (547, 19),
-    (548, 10),
-    (549, 3),
-    (550, 10),
-    (551, 10),
-    (552, 19),
-    (553, 19),
-    (554, 14),
-    (555, 3),
-    (556, 10),
-    (557, 3),
-    (558, 3),
-    (559, 3),
-    (560, 9),
-    (561, 1),
-    (562, 16),
-    (563, 3),
-    (564, 3),
-    (565, 3),
-    (566, 1),
-    (567, 9),
-    (568, 9),
-    (569, 9),
-    (570, 9),
-    (571, 17),
-    (572, 17),
-    (573, 17),
-    (574, 3),
-    (575, 11),
-    (576, 11),
-    (577, 11),
-    (578, 11),
-    (579, 19),
-    (580, 21),
-    (581, 9),
-    (582, 11),
-    (583, 16),
-    (584, 17),
-    (585, 4),
-    (586, 16),
-    (587, 4),
-    (588, 4),
-    (589, 8),
-    (590, 18),
-    (591, 14),
-    (592, 14),
-    (593, 8),
-    (594, 8),
-    (595, 14),
-    (596, 18),
-    (597, 14),
-    (598, 15),
-    (599, 10),
-    (600, 10),
-    (601, 10),
-    (602, 19),
-    (603, 19),
-    (604, 2),
-    (605, 3),
-    (606, 7),
-    (607, 14),
-    (608, 7),
-    (609, 3),
-    (610, 7),
-    (611, 7),
-    (612, 7),
-    (613, 3),
-    (614, 3),
-    (615, 20),
-    (616, 17),
-    (617, 21),
-    (618, 5),
-    (619, 2),
-    (620, 12),
-    (621, 14),
-    (622, 19),
-    (623, 1),
-    (624, 2),
-    (625, 4),
-    (626, 17),
-]
-
 # Bölüm isimleri
 bolumler = {
-    1: "Kardiyoloji (Kalp-Damar)",
-    2: "Nöroloji (Beyin-Sinir)",
-    3: "Ortopedi (Kemik-Eklem)",
-    4: "Göğüs Hastalıkları",
-    5: "Gastroenteroloji (Sindirim)",
-    6: "Endokrinoloji (Hormon)",
-    7: "Üroloji (İdrar Yolları)",
-    8: "Kadın Hastalıkları ve Doğum",
-    9: "Dermatoloji (Cilt)",
-    10: "Göz Hastalıkları (Oftalmoloji)",
-    11: "Kulak Burun Boğaz (KBB)",
-    12: "Psikiyatri (Ruh Sağlığı)",
-    13: "Hematoloji (Kan Hastalıkları)",
-    14: "Onkoloji (Kanser)",
-    15: "Nefroloji (Böbrek)",
-    16: "Romatoloji (Eklem-Otoimmün)",
-    17: "Enfeksiyon Hastalıkları",
-    18: "Genel Cerrahi",
-    19: "Çocuk Sağlığı (Pediatri)",
-    20: "Diş Hekimliği",
-    21: "Göğüs Cerrahisi",
-    22: "Beyin Cerrahisi",
-    23: "Plastik Cerrahi",
-    24: "Anestezi ve Reanimasyon",
-    25: "Kalp Damar Cerrahisi",
+    0: "Acil Tıp",
+    1: "Alerji ve İmmünoloji",
+    2: "Beyin ve Sinir Cerrahisi (Nöroşirürji)",
+    3: "Çocuk Cerrahisi",
+    4: "Çocuk Endokrinolojisi",
+    5: "Çocuk Gastroenterolojisi",
+    6: "Çocuk Göğüs Hastalıkları",
+    7: "Çocuk Hematolojisi",
+    8: "Çocuk İmmünolojisi",
+    9: "Çocuk Kardiyolojisi",
+    10: "Çocuk Nefrolojisi",
+    11: "Çocuk Nörolojisi",
+    12: "Çocuk Onkolojisi",
+    13: "Çocuk Psikiyatrisi",
+    14: "Çocuk Romatolojisi",
+    15: "Çocuk Sağlığı ve Hastalıkları",
+    16: "Çocuk Ürolojisi",
+    17: "Dermatoloji (Cildiye)",
+    18: "Enfeksiyon Hastalıkları",
+    19: "Endokrinoloji (Hormon Hastalıkları)",
+    20: "Fiziksel Tıp ve Rehabilitasyon",
+    21: "Gastroenteroloji (Sindirim Sistemi)",
+    22: "Genel Cerrahi",
+    23: "Göğüs Cerrahisi",
+    24: "Göğüs Hastalıkları",
+    25: "Göz Hastalıkları",
+    26: "Hematoloji (Kan Hastalıkları)",
+    27: "İç Hastalıkları (Dahiliye)",
+    28: "Jinekoloji ve Obstetrik (Kadın Doğum)",
+    29: "Kadın Hastalıkları ve Doğum",
+    30: "Kalp ve Damar Cerrahisi",
+    31: "Kardiyoloji (Kalp Hastalıkları)",
+    32: "Kulak Burun Boğaz (KBB)",
+    33: "Nefroloji (Böbrek Hastalıkları)",
+    34: "Nöroloji (Beyin ve Sinir Hastalıkları)",
+    35: "Onkoloji (Kanser Hastalıkları)",
+    36: "Ortopedi ve Travmatoloji",
+    37: "Plastik, Rekonstrüktif ve Estetik Cerrahi",
+    38: "Psikiyatri (Ruh Sağlığı)",
+    39: "Radyoloji",
+    40: "Romatoloji (Eklem ve Otoimmün Hastalıklar)",
+    41: "Üroloji",
+    42: "Diş Hekimliği",
 }
+
+hastalik_bolum_eslesmeleri = [
+    (0, 42),  # 20'lik Diş -> Diş Hekimliği
+    (1, 19),  # Addison Hastalığı -> Endokrinoloji
+    (2, 18),  # Adenit -> Enfeksiyon Hastalıkları
+    (3, 29),  # Adenomyozis -> Kadın Hastalıkları ve Doğum
+    (4, 18),  # Adenovirüs Enfeksiyonu -> Enfeksiyon Hastalıkları
+    (5, 29),  # Adet öncesi gerginlik sendromu (PMS) -> Kadın Hastalıkları ve Doğum
+    (6, 34),  # Afazi -> Nöroloji
+    (7, 38),  # Agorafobi -> Psikiyatri
+    (8, 35),  # Ağız Kanseri -> Onkoloji
+    (9, 18),  # AIDS-HIV -> Enfeksiyon Hastalıkları
+    (10, 40),  # Ailesel Akdeniz Ateşi (Fmf) -> Romatoloji
+    (11, 21),  # Akalazya (yutma güçlüğü) -> Gastroenteroloji
+    (12, 24),  # Akciğer embolisi -> Göğüs Hastalıkları
+    (13, 24),  # Akciğer Enfeksiyonu -> Göğüs Hastalıkları
+    (14, 24),  # Akciğer Kanaması -> Göğüs Hastalıkları
+    (15, 35),  # Akciğer Kanseri -> Onkoloji
+    (16, 24),  # Akciğer sönmesi -> Göğüs Hastalıkları
+    (17, 35),  # Akciğer Zarı Kanseri (Mezotelyoma) -> Onkoloji
+    (18, 26),  # Akdeniz Anemisi (Talesemi) -> Hematoloji
+    (19, 36),  # Akondroplazi -> Ortopedi
+    (20, 19),  # Akromegali Hastalığı -> Endokrinoloji
+    (21, 26),  # Akut Lenfoblastik Lösemi (ALL) -> Hematoloji
+    (22, 26),  # Akut miyeloid lösemi (AML) -> Hematoloji
+    (23, 21),  # Akut Pankreatit -> Gastroenteroloji
+    (24, 17),  # Albino (Albinizm) -> Dermatoloji
+    (25, 1),  # Alerji -> Alerji ve İmmünoloji
+    (26, 33),  # Alport Sendromu -> Nefroloji
+    (27, 34),  # ALS Hastalığı -> Nöroloji
+    (28, 15),  # Altıncı Hastalık -> Çocuk Sağlığı ve Hastalıkları
+    (29, 34),  # Alzheimer Hastalığı -> Nöroloji
+    (30, 24),  # Amfizem -> Göğüs Hastalıkları
+    (31, 27),  # Amiloidoz -> İç Hastalıkları
+    (32, 38),  # Amok Hastalığı -> Psikiyatri
+    (33, 1),  # Anafilaksi -> Alerji ve İmmünoloji
+    (34, 30),  # Anevrizma -> Kalp ve Damar Cerrahisi
+    (35, 36),  # Anevrizmal Kemik Kisti -> Ortopedi
+    (36, 34),  # Angelman Sendromu -> Nöroloji
+    (37, 25),  # Anizokori -> Göz Hastalıkları
+    (38, 40),  # Ankilozan Spondilit -> Romatoloji
+    (39, 38),  # Anksiyete -> Psikiyatri
+    (40, 38),  # Anoreksiya Nervoza -> Psikiyatri
+    (41, 22),  # Anorektal bölge selim hastalıkları -> Genel Cerrahi
+    (42, 32),  # Anosmi (Koku Alamamak) -> KBB
+    (43, 30),  # Aort Anevrizması -> Kalp ve Damar Cerrahisi
+    (44, 31),  # Aort Kapak Darlığı -> Kardiyoloji
+    (45, 22),  # Apandisit -> Genel Cerrahi
+    (46, 26),  # Aplastik Anemi -> Hematoloji
+    (47, 25),  # Arpacık -> Göz Hastalıkları
+    (48, 9),  # ASD (Atriyal Septal Defekt) -> Çocuk Kardiyolojisi
+    (49, 13),  # Asperger Sendromu -> Çocuk Psikiyatrisi
+    (50, 24),  # Astım -> Göğüs Hastalıkları
+    (51, 17),  # Aşırı Terleme -> Dermatoloji
+    (52, 19),  # Aşırı Tüylenme (Hirsutizm) -> Endokrinoloji
+    (53, 36),  # Aşil tendiniti -> Ortopedi
+    (54, 24),  # Atelektazi -> Göğüs Hastalıkları
+    (55, 31),  # Ateroskleroz -> Kardiyoloji
+    (56, 38),  # Atipik Psikoz -> Psikiyatri
+    (57, 17),  # Atopik Dermatit -> Dermatoloji
+    (58, 31),  # Atriyal Fibrilasyon -> Kardiyoloji
+    (59, 27),  # Atrofi -> İç Hastalıkları
+    (60, 21),  # Auto Brewery Sendromu -> Gastroenteroloji
+    (61, 36),  # Avasküler Nekroz (Osteonekroz) -> Ortopedi
+    (62, 2),  # AVM Hastalığı -> Beyin ve Sinir Cerrahisi
+    (63, 41),  # Azospermi -> Üroloji
+    (64, 32),  # Bademcik Taşı (Tonsillolit) -> KBB
+    (65, 18),  # Bağırsak Enfeksiyonu -> Enfeksiyon Hastalıkları
+    (66, 22),  # Bağırsak Sarkması -> Genel Cerrahi
+    (67, 22),  # Bağırsak Tıkanıklığı -> Genel Cerrahi
+    (68, 36),  # Baker Kisti -> Ortopedi
+    (69, 29),  # Bakteriyel Vajinozis -> Kadın Hastalıkları ve Doğum
+    (70, 17),  # Balık Pulu Hastalığı -> Dermatoloji
+    (71, 29),  # Bartholin Kisti -> Kadın Hastalıkları ve Doğum
+    (72, 36),  # Başparmak çıkıntısı (Halluks valgus) -> Ortopedi
+    (73, 32),  # Bebeklerde Burun Tıkanıklığı -> KBB
+    (74, 15),  # Bebeklerde Konak -> Çocuk Sağlığı ve Hastalıkları
+    (75, 15),  # Bebeklerde Pamukçuk -> Çocuk Sağlığı ve Hastalıkları
+    (76, 4),  # Beckwith Wiedemann Sendromu -> Çocuk Endokrinolojisi
+    (77, 40),  # Behçet Hastalığı -> Romatoloji
+    (78, 20),  # Bel düzleşmesi -> Fiziksel Tıp ve Rehabilitasyon
+    (79, 2),  # Bel Fıtığı -> Beyin ve Sinir Cerrahisi
+    (80, 2),  # Bel Kayması -> Beyin ve Sinir Cerrahisi
+    (81, 18),  # Bel Soğukluğu -> Enfeksiyon Hastalıkları
+    (82, 2),  # Belde kanal daralması -> Beyin ve Sinir Cerrahisi
+    (83, 27),  # Beriberi Hastalığı -> İç Hastalıkları
+    (84, 18),  # BETA Enfeksiyonu -> Enfeksiyon Hastalıkları
+    (85, 34),  # Beyin İltihabı -> Nöroloji
+    (86, 2),  # Beyin Kanaması -> Beyin ve Sinir Cerrahisi
+    (87, 2),  # Beyin Tümörü -> Beyin ve Sinir Cerrahisi
+    (88, 34),  # Beyinde Damar Tıkanıklığı -> Nöroloji
+    (89, 38),  # Bipolar Affektif Bozukluk -> Psikiyatri
+    (90, 4),  # Biyotinidaz eksikliği -> Çocuk Endokrinolojisi
+    (91, 21),  # Boğaz Reflüsü -> Gastroenteroloji
+    (92, 18),  # Boğmaca -> Enfeksiyon Hastalıkları
+    (93, 36),  # Boksör Kırığı -> Ortopedi
+    (94, 38),  # Borderline Kişilik Bozukluğu -> Psikiyatri
+    (95, 20),  # Boyun Ağrısı -> Fiziksel Tıp ve Rehabilitasyon
+    (96, 20),  # Boyun Düzleşmesi -> Fiziksel Tıp ve Rehabilitasyon
+    (97, 2),  # Boyun Fıtığı -> Beyin ve Sinir Cerrahisi
+    (98, 33),  # Böbrek Büyümesi -> Nefroloji
+    (99, 33),  # Böbrek İltihabı -> Nefroloji
+    (100, 35),  # Böbrek Kanseri -> Onkoloji
+    (101, 41),  # Böbrek Taşları -> Üroloji
+    (102, 19),  # Böbrek üstü bezi kanseri -> Endokrinoloji
+    (103, 33),  # Böbrek Yetmezliği -> Nefroloji
+    (104, 31),  # Bradikardi (yavaş kalp hızı) -> Kardiyoloji
+    (105, 34),  # Broca Afazisi -> Nöroloji
+    (106, 6),  # Bronkopulmoner Displazi -> Çocuk Göğüs Hastalıkları
+    (107, 24),  # Bronşektazi -> Göğüs Hastalıkları
+    (108, 6),  # Bronşiolit -> Çocuk Göğüs Hastalıkları
+    (109, 24),  # Bronşit -> Göğüs Hastalıkları
+    (110, 18),  # Brusella -> Enfeksiyon Hastalıkları
+    (111, 30),  # Budd-Chiari Sendromu -> Kalp ve Damar Cerrahisi
+    (112, 30),  # Buerger Hastalığı -> Kalp ve Damar Cerrahisi
+    (113, 18),  # Bulaşıcı Hastalıklar -> Enfeksiyon Hastalıkları
+    (114, 38),  # Bulimia Nervoza -> Psikiyatri
+    (115, 36),  # Bursit -> Ortopedi
+    (116, 17),  # Büllöz Pemfigoid -> Dermatoloji
+    (117, 36),  # Cam Kemik Hastalığı -> Ortopedi
+    (118, 19),  # Carney Kompleksi -> Endokrinoloji
+    (119, 3),  # Carpenter Sendromu -> Çocuk Cerrahisi
+    (120, 35),  # Castleman Hastalığı -> Onkoloji
+    (121, 34),  # Charcot Marie Tooth Hastalığı -> Nöroloji
+    (122, 18),  # Chikungunya Virüsü -> Enfeksiyon Hastalıkları
+    (123, 40),  # Churg-Strauss Sendromu -> Romatoloji
+    (124, 35),  # Cilt Kanseri -> Onkoloji
+    (125, 29),  # Cinsel İşlev Bozuklukları -> Kadın Hastalıkları ve Doğum
+    (126, 18),  # Covid-19 (Koronavirüs) -> Enfeksiyon Hastalıkları
+    (127, 11),  # Cri Du Chat Sendromu -> Çocuk Nörolojisi
+    (128, 21),  # Crohn Hastalığı -> Gastroenteroloji
+    (129, 19),  # Cushing Sendromu -> Endokrinoloji
+    (130, 18),  # Cüzzam Hastalığı -> Enfeksiyon Hastalıkları
+    (131, 36),  # Çapraz Bağ Kopması -> Ortopedi
+    (132, 42),  # Çarpık diş -> Diş Hekimliği
+    (133, 17),  # Çatlak Nedir? -> Dermatoloji
+    (134, 36),  # Çekiç parmak -> Ortopedi
+    (135, 32),  # Çene Eklemi Rahatsızlığı -> KBB
+    (136, 18),  # Çiçek Hastalığı -> Enfeksiyon Hastalıkları
+    (137, 18),  # Çocuk Felci -> Enfeksiyon Hastalıkları
+    (138, 9),  # Çocuklarda Hipertansiyon -> Çocuk Kardiyolojisi
+    (139, 16),  # Çocuklarda İdrar Kaçırma -> Çocuk Ürolojisi
+    (140, 3),  # Çocuklarda Kasık Fıtığı -> Çocuk Cerrahisi
+    (141, 36),  # Çocuklarda kemik kistleri -> Ortopedi
+    (142, 4),  # Çocuklarda Obezite -> Çocuk Endokrinolojisi
+    (143, 36),  # Çocuklarda Topallama -> Ortopedi
+    (144, 6),  # Çocuklarda Uyku Apnesi -> Çocuk Göğüs Hastalıkları
+    (145, 27),  # Çoklu Organ Yetmezliği -> İç Hastalıkları
+    (146, 21),  # Çölyak Hastalığı -> Gastroenteroloji
+    (147, 34),  # Deli Dana Hastalığı -> Nöroloji
+    (148, 38),  # Deliryum -> Psikiyatri
+    (149, 34),  # Demans -> Nöroloji
+    (150, 40),  # Dermatomiyozit -> Romatoloji
+    (151, 29),  # Dermoid Kist -> Kadın Hastalıkları ve Doğum
+    (152, 36),  # Dev Hücreli Kemik Tümörü -> Ortopedi
+    (153, 19),  # Diabetes Insipidus -> Endokrinoloji
+    (154, 18),  # Difteri (Kuşpalazı) -> Enfeksiyon Hastalıkları
+    (155, 32),  # Dil Bağı Hastalığı -> KBB
+    (156, 35),  # Dil Kanseri -> Onkoloji
+    (157, 32),  # Dil Ülseri -> KBB
+    (158, 36),  # Dirsek Kırığı -> Ortopedi
+    (159, 21),  # Dispepsi -> Gastroenteroloji
+    (160, 38),  # Distimi (Kronik Depresyon) -> Psikiyatri
+    (161, 34),  # Distoni -> Nöroloji
+    (162, 42),  # Diş apsesi -> Diş Hekimliği
+    (163, 42),  # Diş Eti Çekilmesi -> Diş Hekimliği
+    (164, 42),  # Diş Eti Hastalıkları -> Diş Hekimliği
+    (165, 42),  # Diş Eti İltihabı -> Diş Hekimliği
+    (166, 42),  # Diş Kırılması -> Diş Hekimliği
+    (167, 42),  # Diş Kökü İltihabı -> Diş Hekimliği
+    (168, 42),  # Diş Sıkma (Bruksizm) -> Diş Hekimliği
+    (169, 22),  # Divertikülit -> Genel Cerrahi
+    (170, 33),  # Diyabetik Nefropati -> Nefroloji
+    (171, 24),  # Diyafram Felci -> Göğüs Hastalıkları
+    (172, 36),  # Diz Kireçlenmesi -> Ortopedi
+    (173, 18),  # Dizanteri -> Enfeksiyon Hastalıkları
+    (174, 18),  # Domuz Gribi -> Enfeksiyon Hastalıkları
+    (175, 34),  # Duchenne Musküler Distrofi -> Nöroloji
+    (176, 35),  # Dudak Kanseri -> Onkoloji
+    (177, 21),  # Dumping Sendromu -> Gastroenteroloji
+    (178, 36),  # Dupuytren Kontraktürü -> Ortopedi
+    (179, 27),  # Düşük Tansiyon -> İç Hastalıkları
+    (180, 36),  # Düztabanlık -> Ortopedi
+    (181, 18),  # Ebola Virüsü -> Enfeksiyon Hastalıkları
+    (182, 17),  # Egzama -> Dermatoloji
+    (183, 40),  # Ehlers-Danlos Sendromu -> Romatoloji
+    (184, 15),  # El Ayak Ağız Hastalığı -> Çocuk Sağlığı ve Hastalıkları
+    (185, 27),  # Elektrolit dengesizliği -> İç Hastalıkları
+    (186, 21),  # Emilim Bozukluğu -> Gastroenteroloji
+    (187, 29),  # Endometriozis -> Kadın Hastalıkları ve Doğum
+    (188, 41),  # Epididimit -> Üroloji
+    (189, 34),  # Epilepsi -> Nöroloji
+    (190, 40),  # Erişkin Still Hastalığı -> Romatoloji
+    (191, 41),  # Erkeklerde Kısırlık -> Üroloji
+    (192, 41),  # Erken Boşalma -> Üroloji
+    (193, 36),  # Ewing Sarkomu -> Ortopedi
+    (194, 26),  # Fabry Hastalığı -> Hematoloji
+    (195, 34),  # Fahr Sendromu -> Nöroloji
+    (196, 9),  # Fallot Tetralojisi -> Çocuk Kardiyolojisi
+    (197, 33),  # Fanconi Sendromu -> Nefroloji
+    (198, 20),  # Faset Eklem Sendromu -> Fiziksel Tıp ve Rehabilitasyon
+    (199, 4),  # Fenilketonüri Hastalığı -> Çocuk Endokrinolojisi
+    (200, 29),  # Ferç kaşıntısı -> Kadın Hastalıkları ve Doğum
+    (201, 29),  # Fibroadenom -> Kadın Hastalıkları ve Doğum
+    (202, 20),  # Fibromiyalji -> Fiziksel Tıp ve Rehabilitasyon
+    (203, 30),  # Fil Hastalığı -> Kalp ve Damar Cerrahisi
+    (204, 11),  # Frajil X Sendromu -> Çocuk Nörolojisi
+    (205, 36),  # Freiber Hastalığı -> Ortopedi
+    (206, 18),  # Frengi (Sifiliz) -> Enfeksiyon Hastalıkları
+    (207, 21),  # Gastrit -> Gastroenteroloji
+    (208, 21),  # Gastroenterit -> Gastroenteroloji
+    (209, 3),  # Gastroşizis -> Çocuk Cerrahisi
+    (210, 26),  # Gaucher Hastalığı -> Hematoloji
+    (211, 21),  # Geçirgen Bağırsak Sendromu -> Gastroenteroloji
+    (212, 36),  # Gelişimsel Kalça Çıkığı -> Ortopedi
+    (213, 27),  # Genetik Hastalıklar -> İç Hastalıkları
+    (214, 29),  # Genital Siğil -> Kadın Hastalıkları ve Doğum
+    (215, 29),  # Genital Uçuk -> Kadın Hastalıkları ve Doğum
+    (216, 2),  # Gergin Omurilik Sendromu -> Beyin ve Sinir Cerrahisi
+    (217, 35),  # Gırtlak Kanseri -> Onkoloji
+    (218, 18),  # Giardia -> Enfeksiyon Hastalıkları
+    (219, 27),  # Gilbert Sendromu -> İç Hastalıkları
+    (220, 19),  # Gizli Şeker -> Endokrinoloji
+    (221, 2),  # Glial Tümör -> Beyin ve Sinir Cerrahisi
+    (222, 25),  # Glokom -> Göz Hastalıkları
+    (223, 22),  # Göbek Deliği İltihabı -> Genel Cerrahi
+    (224, 22),  # Göbek Fıtığı -> Genel Cerrahi
+    (225, 23),  # Göğüs Duvarı Tümörü -> Göğüs Cerrahisi
+    (226, 25),  # Göz Enfeksiyonu -> Göz Hastalıkları
+    (227, 35),  # Göz Kanseri -> Onkoloji
+    (228, 34),  # Göz Migreni -> Nöroloji
+    (229, 19),  # Graves Hastalığı -> Endokrinoloji
+    (230, 18),  # Grip -> Enfeksiyon Hastalıkları
+    (231, 19),  # Guatr -> Endokrinoloji
+    (232, 34),  # Guillain-Barre Sendromu -> Nöroloji
+    (233, 40),  # Gut Hastalığı -> Romatoloji
+    (234, 17),  # Gül Hastalığı -> Dermatoloji
+    (235, 36),  # Güvercin Göğsü -> Ortopedi
+    (236, 38),  # Halüsinasyon -> Psikiyatri
+    (237, 32),  # Hareket Hastalığı -> KBB
+    (238, 17),  # Harlequin fetüs -> Dermatoloji
+    (239, 19),  # Haşimato -> Endokrinoloji
+    (240, 21),  # Helikobakter Pilori -> Gastroenteroloji
+    (241, 17),  # Hemanjiom -> Dermatoloji
+    (242, 22),  # Hematom -> Genel Cerrahi
+    (243, 34),  # Hemipleji -> Nöroloji
+    (244, 26),  # Hemoglobinopati -> Hematoloji
+    (245, 26),  # Hemokromatozis -> Hematoloji
+    (246, 26),  # Hemolitik Anemi -> Hematoloji
+    (247, 22),  # Hemoroid -> Genel Cerrahi
+    (248, 18),  # Hepatit A -> Enfeksiyon Hastalıkları
+    (249, 18),  # Hepatit B -> Enfeksiyon Hastalıkları
+    (250, 18),  # Hepatit C -> Enfeksiyon Hastalıkları
+    (251, 18),  # Hepatit E -> Enfeksiyon Hastalıkları
+    (252, 1),  # Herediter Anjiyoödem -> Alerji ve İmmünoloji
+    (253, 26),  # Herediter Sferositoz -> Hematoloji
+    (254, 29),  # Hermafrodit -> Kadın Hastalıkları ve Doğum
+    (255, 2),  # Hidrosefali -> Beyin ve Sinir Cerrahisi
+    (256, 34),  # Hipersomnia -> Nöroloji
+    (257, 19),  # Hipertiroidizm -> Endokrinoloji
+    (258, 31),  # Hipertrofik Kardiyomiyopati -> Kardiyoloji
+    (259, 19),  # Hipofiz Tümörleri -> Endokrinoloji
+    (260, 41),  # Hipospadias -> Üroloji
+    (261, 19),  # Hipotiroidi -> Endokrinoloji
+    (262, 3),  # Hirschsprung Hastalığı -> Çocuk Cerrahisi
+    (263, 34),  # Horner Sendromu -> Nöroloji
+    (264, 29),  # HPV -> Kadın Hastalıkları ve Doğum
+    (265, 14),  # HSP Hastalığı -> Çocuk Romatolojisi
+    (266, 34),  # Huntington hastalığı -> Nöroloji
+    (267, 4),  # Hurler Sendromu -> Çocuk Endokrinolojisi
+    (268, 21),  # Huzursuz Bağırsak Sendromu -> Gastroenteroloji
+    (269, 34),  # Huzursuz Bacak Sendromu -> Nöroloji
+    (270, 21),  # Inflamatuar Bağırsak Hastalığı -> Gastroenteroloji
+    (271, 34),  # Insomnia -> Nöroloji
+    (272, 32),  # İç Kulak İltihabı -> KBB
+    (273, 41),  # İdrar Yolu Enfeksiyonu -> Üroloji
+    (274, 41),  # İktidarsızlık -> Üroloji
+    (275, 1),  # İlaç Alerjisi -> Alerji ve İmmünoloji
+    (276, 18),  # İnfluenza -> Enfeksiyon Hastalıkları
+    (277, 41),  # İnmemiş Testis -> Üroloji
+    (278, 19),  # İnsülin Direnci -> Endokrinoloji
+    (279, 24),  # İnterstisyel Akciğer Hastalığı -> Göğüs Hastalıkları
+    (280, 26),  # İTP Hastalığı -> Hematoloji
+    (281, 36),  # İyi Huylu Kemik Tümörleri -> Ortopedi
+    (282, 11),  # Joubert Sendromu -> Çocuk Nörolojisi
+    (283, 18),  # Kabakulak -> Enfeksiyon Hastalıkları
+    (284, 27),  # Kaçış Sendromu -> İç Hastalıkları
+    (285, 29),  # Kadınlarda İdrar Kaçırma -> Kadın Hastalıkları ve Doğum
+    (286, 36),  # Kalça Kireçlenmesi -> Ortopedi
+    (287, 36),  # Kalça Labrum Yırtığı -> Ortopedi
+    (288, 31),  # Kalp Anevrizması -> Kardiyoloji
+    (289, 31),  # Kalp Damar Plağı -> Kardiyoloji
+    (290, 31),  # Kalp Kası İltihabı -> Kardiyoloji
+    (291, 31),  # Kalp Romatizması -> Kardiyoloji
+    (292, 31),  # Kalp Yetmezliği -> Kardiyoloji
+    (293, 29),  # Kan uyuşmazlığı -> Kadın Hastalıkları ve Doğum
+    (294, 35),  # Kanser -> Onkoloji
+    (295, 26),  # Kansızlık -> Hematoloji
+    (296, 18),  # Kara Mantar Hastalığı -> Enfeksiyon Hastalıkları
+    (297, 35),  # Karaciğer Kanseri -> Onkoloji
+    (298, 21),  # Karaciğer Sirozu -> Gastroenteroloji
+    (299, 21),  # Karaciğer Yağlanması -> Gastroenteroloji
+    (300, 21),  # Karaciğer Yetmezliği -> Gastroenteroloji
+    (301, 35),  # Karın Zarı Kanseri -> Onkoloji
+    (302, 34),  # Karpal Tünel Sendromu -> Nöroloji
+    (303, 24),  # Kartagener Sendromu -> Göğüs Hastalıkları
+    (304, 34),  # Kas ve Sinir Hastalıkları -> Nöroloji
+    (305, 22),  # Kasık Fıtığı -> Genel Cerrahi
+    (306, 17),  # Kasık Mantarı -> Dermatoloji
+    (307, 25),  # Katarakt -> Göz Hastalıkları
+    (308, 9),  # Kawasaki Hastalığı -> Çocuk Kardiyolojisi
+    (309, 40),  # Kelebek Hastalığı -> Romatoloji
+    (310, 26),  # Kemik İliği Kanseri -> Hematoloji
+    (311, 36),  # Kemik İltihabı -> Ortopedi
+    (312, 36),  # Kemik Kanseri -> Ortopedi
+    (313, 25),  # Keratokonus -> Göz Hastalıkları
+    (314, 22),  # Kıl Dönmesi -> Genel Cerrahi
+    (315, 18),  # Kıl Kurdu -> Enfeksiyon Hastalıkları
+    (316, 31),  # Kırık Kalp Sendromu -> Kardiyoloji
+    (317, 29),  # Kısırlık -> Kadın Hastalıkları ve Doğum
+    (318, 18),  # Kızamık -> Enfeksiyon Hastalıkları
+    (319, 18),  # Kızamıkçık -> Enfeksiyon Hastalıkları
+    (320, 18),  # Kızıl Hastalığı -> Enfeksiyon Hastalıkları
+    (321, 36),  # Kireçlenme -> Ortopedi
+    (322, 5),  # Kistik Fibrozis -> Çocuk Gastroenterolojisi
+    (323, 38),  # Kişilik Bozuklukları -> Psikiyatri
+    (324, 38),  # Kleptomani -> Psikiyatri
+    (325, 4),  # Klinefelter sendromu -> Çocuk Endokrinolojisi
+    (326, 38),  # Klostrofobi -> Psikiyatri
+    (327, 24),  # KOAH -> Göğüs Hastalıkları
+    (328, 18),  # Kolera -> Enfeksiyon Hastalıkları
+    (329, 31),  # Kolesterol -> Kardiyoloji
+    (330, 21),  # Kolit ve Ülseratif Kolit -> Gastroenteroloji
+    (331, 35),  # Kolon Kanseri -> Onkoloji
+    (332, 36),  # Kondromalazi patella -> Ortopedi
+    (333, 31),  # Konjestif kalp yetmezliği -> Kardiyoloji
+    (334, 25),  # Konjonktivit -> Göz Hastalıkları
+    (335, 32),  # Konka Hipertrofisi -> KBB
+    (336, 17),  # Kontakt Dermatit -> Dermatoloji
+    (337, 41),  # Kordon Kisti Ve Hidrosel -> Üroloji
+    (338, 31),  # Koroner Arter Hastalığı -> Kardiyoloji
+    (339, 29),  # Koryoamniyonit -> Kadın Hastalıkları ve Doğum
+    (340, 17),  # Köpek Memesi Hastalığı -> Dermatoloji
+    (341, 25),  # Kreatit -> Göz Hastalıkları
+    (342, 26),  # Kronik Lenfositik Lösemi -> Hematoloji
+    (343, 26),  # Kronik Miyeloid Lösemi -> Hematoloji
+    (344, 29),  # Kronik Pelvik Ağrı -> Kadın Hastalıkları ve Doğum
+    (345, 30),  # Kronik Venöz Yetmezlik -> Kalp ve Damar Cerrahisi
+    (346, 27),  # Kronik Yorgunluk Sendromu -> İç Hastalıkları
+    (347, 6),  # Krup Hastalığı -> Çocuk Göğüs Hastalıkları
+    (348, 34),  # Kubital Tünel Sendromu -> Nöroloji
+    (349, 18),  # Kuduz Hastalığı -> Enfeksiyon Hastalıkları
+    (350, 32),  # Kulak Nezlesi -> KBB
+    (351, 41),  # Kum Dökme -> Üroloji
+    (352, 36),  # Kunduracı Göğsü -> Ortopedi
+    (353, 1),  # Kurdeşen -> Alerji ve İmmünoloji
+    (354, 32),  # Küçük Dil Şişmesi -> KBB
+    (355, 34),  # Küme Baş Ağrısı -> Nöroloji
+    (356, 34),  # Lafora Hastalığı -> Nöroloji
+    (357, 35),  # Langerhans Hücreli Histiositoz -> Onkoloji
+    (358, 32),  # Larenjit -> KBB
+    (359, 18),  # Lejyoner Hastalığı -> Enfeksiyon Hastalıkları
+    (360, 35),  # Lenf Kanseri -> Onkoloji
+    (361, 18),  # Leptospiroz -> Enfeksiyon Hastalıkları
+    (362, 17),  # Liken Planus -> Dermatoloji
+    (363, 17),  # Liken Skleroz -> Dermatoloji
+    (364, 30),  # Lipödem -> Kalp ve Damar Cerrahisi
+    (365, 18),  # Listeria Hastalığı -> Enfeksiyon Hastalıkları
+    (366, 29),  # Lohusalık Humması -> Kadın Hastalıkları ve Doğum
+    (367, 26),  # Lösemi -> Hematoloji
+    (368, 18),  # Lyme Hastalığı -> Enfeksiyon Hastalıkları
+    (369, 38),  # Majör Depresyon -> Psikiyatri
+    (370, 22),  # Makat Çatlağı -> Genel Cerrahi
+    (371, 37),  # Makrodaktili -> Plastik Cerrahi
+    (372, 17),  # Mantar Hastalığı -> Dermatoloji
+    (373, 15),  # Marasmus -> Çocuk Sağlığı ve Hastalıkları
+    (374, 31),  # Marfan Sendromu -> Kardiyoloji
+    (375, 29),  # Mastit -> Kadın Hastalıkları ve Doğum
+    (376, 17),  # Mastositoz -> Dermatoloji
+    (377, 18),  # Mavi Dil Hastalığı -> Enfeksiyon Hastalıkları
+    (378, 38),  # Mazoşizm -> Psikiyatri
+    (379, 26),  # Megaloblastik Anemi -> Hematoloji
+    (380, 34),  # Meige Sendromu -> Nöroloji
+    (381, 29),  # Meme Enfeksiyonu -> Kadın Hastalıkları ve Doğum
+    (382, 35),  # Meme Kanseri -> Onkoloji
+    (383, 34),  # Menenjit -> Nöroloji
+    (384, 32),  # Meniere Hastalığı -> KBB
+    (385, 36),  # Menisküs -> Ortopedi
+    (386, 18),  # Mers Virüsü -> Enfeksiyon Hastalıkları
+    (387, 35),  # Mesane Kanseri -> Onkoloji
+    (388, 35),  # Metastaz -> Onkoloji
+    (389, 26),  # Methemoglobinemi -> Hematoloji
+    (390, 22),  # Mezenterik İskemi -> Genel Cerrahi
+    (391, 35),  # Mide Kanseri -> Onkoloji
+    (392, 34),  # Migren -> Nöroloji
+    (393, 31),  # Mitral Kapak Yetmezliği -> Kardiyoloji
+    (394, 26),  # Miyelofibrozis -> Hematoloji
+    (395, 29),  # Miyom -> Kadın Hastalıkları ve Doğum
+    (396, 36),  # Miyozitis Ossifikans -> Ortopedi
+    (397, 34),  # Moebius Sendromu -> Nöroloji
+    (398, 34),  # MS Hastalığı -> Nöroloji
+    (399, 26),  # Multipl Miyelom -> Hematoloji
+    (400, 34),  # Myastenia Gravis -> Nöroloji
+    (401, 26),  # Myelodisplastik Sendrom -> Hematoloji
+    (402, 34),  # Narkolepsi -> Nöroloji
+    (403, 17),  # Nasır -> Dermatoloji
+    (404, 35),  # Nazofarenks Kanseri -> Onkoloji
+    (405, 33),  # Nefrotik Sendrom -> Nefroloji
+    (406, 17),  # Netherton Sendromu -> Dermatoloji
+    (407, 25),  # Nistagmus -> Göz Hastalıkları
+    (408, 18),  # Norovirüs -> Enfeksiyon Hastalıkları
+    (409, 12),  # Nöroblastom -> Çocuk Onkolojisi
+    (410, 34),  # Nörofibromatozis -> Nöroloji
+    (411, 34),  # Nöropati -> Nöroloji
+    (412, 27),  # Obezite -> İç Hastalıkları
+    (413, 41),  # Oligospermi -> Üroloji
+    (414, 3),  # Omfalosel -> Çocuk Cerrahisi
+    (415, 2),  # Omurga Tümörleri -> Beyin ve Sinir Cerrahisi
+    (416, 36),  # Omuz Çıkığı -> Ortopedi
+    (417, 36),  # Omuz Kireçlenmesi -> Ortopedi
+    (418, 26),  # Orak hücre anemisi -> Hematoloji
+    (419, 18),  # ORF Hastalığı -> Enfeksiyon Hastalıkları
+    (420, 32),  # Orta Kulak İltihabı -> KBB
+    (421, 36),  # Osteoartrit -> Ortopedi
+    (422, 36),  # Osteoid Osteoma Tümörü -> Ortopedi
+    (423, 36),  # Osteomalazi -> Ortopedi
+    (424, 36),  # Osteoporoz -> Ortopedi
+    (425, 36),  # Osteosarkom -> Ortopedi
+    (426, 13),  # Otizm -> Çocuk Psikiyatrisi
+    (427, 40),  # Otoimmün Hastalıklar -> Romatoloji
+    (428, 32),  # Otoskleroz -> KBB
+    (429, 18),  # Öpücük Hastalığı -> Enfeksiyon Hastalıkları
+    (430, 21),  # Özofajit -> Gastroenteroloji
+    (431, 36),  # Paget Hastalığı -> Ortopedi
+    (432, 21),  # Pangastrit -> Gastroenteroloji
+    (433, 35),  # Pankreas Kanseri -> Onkoloji
+    (434, 25),  # Papilödem -> Göz Hastalıkları
+    (435, 2),  # Parapleji -> Beyin ve Sinir Cerrahisi
+    (436, 19),  # Paratiroid Bezi Hastalıkları -> Endokrinoloji
+    (437, 34),  # Parkinson -> Nöroloji
+    (438, 31),  # Patent Foramen Ovale -> Kardiyoloji
+    (439, 29),  # Pelvik İnflamatuar Hastalık -> Kadın Hastalıkları ve Doğum
+    (440, 29),  # Pelvik Konjesyon Sendromu -> Kadın Hastalıkları ve Doğum
+    (441, 17),  # Pemfigus -> Dermatoloji
+    (442, 41),  # Penis Eğrilikleri -> Üroloji
+    (443, 35),  # Penis Kanseri -> Onkoloji
+    (444, 22),  # Perianal Fistül -> Genel Cerrahi
+    (445, 30),  # Periferik Damar Hastalığı -> Kalp ve Damar Cerrahisi
+    (446, 34),  # Periferik Nöropati -> Nöroloji
+    (447, 31),  # Perikardiyal Efüzyon -> Kardiyoloji
+    (448, 40),  # Periyodik Ateş Sendromu -> Romatoloji
+    (449, 26),  # Pernisiyöz Anemi -> Hematoloji
+    (450, 14),  # PFAPA Sendromu -> Çocuk Romatolojisi
+    (451, 34),  # Pick Hastalığı -> Nöroloji
+    (452, 38),  # Pika Sendromu -> Psikiyatri
+    (453, 3),  # Pilor Stenozu -> Çocuk Cerrahisi
+    (454, 36),  # Piriformis Sendromu -> Ortopedi
+    (455, 38),  # Piromani Hastalığı -> Psikiyatri
+    (456, 24),  # Plevral Efüzyon -> Göğüs Hastalıkları
+    (457, 24),  # Pnömokonyoz -> Göğüs Hastalıkları
+    (458, 34),  # PolG Hastalığı -> Nöroloji
+    (459, 37),  # Polidaktili -> Plastik Cerrahi
+    (460, 33),  # Polikistik Böbrek Hastalığı -> Nefroloji
+    (461, 29),  # Polikistik Over Sendromu -> Kadın Hastalıkları ve Doğum
+    (462, 25),  # Polikoria -> Göz Hastalıkları
+    (463, 40),  # Polimiyozit -> Romatoloji
+    (464, 34),  # Polinöropati -> Nöroloji
+    (465, 22),  # Polip -> Genel Cerrahi
+    (466, 26),  # Polisitemi -> Hematoloji
+    (467, 25),  # Prematüre Retinopatisi -> Göz Hastalıkları
+    (468, 36),  # Prepatellar Bursit -> Ortopedi
+    (469, 25),  # Presbiyopi -> Göz Hastalıkları
+    (470, 4),  # Progeria -> Çocuk Endokrinolojisi
+    (471, 34),  # Prosopagnozi -> Nöroloji
+    (472, 41),  # Prostat -> Üroloji
+    (473, 41),  # Prostat İltihabı -> Üroloji
+    (474, 35),  # Prostat Kanseri -> Onkoloji
+    (475, 40),  # Psöriatik Artrit -> Romatoloji
+    (476, 24),  # Pulmoner Fibrozis -> Göğüs Hastalıkları
+    (477, 31),  # Pulmoner Hipertansiyon -> Kardiyoloji
+    (478, 35),  # Rahim Ağzı Kanseri -> Onkoloji
+    (479, 29),  # Rahim Duvarı Kalınlaşması -> Kadın Hastalıkları ve Doğum
+    (480, 35),  # Rahim Kanseri -> Onkoloji
+    (481, 29),  # Rahim Sarkması -> Kadın Hastalıkları ve Doğum
+    (482, 32),  # Ramsay Hunt Sendromu -> KBB
+    (483, 36),  # Raşitizm -> Ortopedi
+    (484, 30),  # Raynaud Sendromu -> Kalp ve Damar Cerrahisi
+    (485, 21),  # Reflü -> Gastroenteroloji
+    (486, 29),  # Rektosel -> Kadın Hastalıkları ve Doğum
+    (487, 35),  # Rektum Kanseri -> Onkoloji
+    (488, 33),  # Renal Arter Stenozu -> Nefroloji
+    (489, 25),  # Renk Körlüğü -> Göz Hastalıkları
+    (490, 25),  # Retina Yırtığı -> Göz Hastalıkları
+    (491, 25),  # Retinopati -> Göz Hastalıkları
+    (492, 11),  # Rett Sendromu -> Çocuk Nörolojisi
+    (493, 34),  # Reye Sendromu -> Nöroloji
+    (494, 40),  # Romatizma -> Romatoloji
+    (495, 40),  # Romatoid Artrit -> Romatoloji
+    (496, 18),  # Rota Virüsü -> Enfeksiyon Hastalıkları
+    (497, 36),  # Rotator Cuff Sendromu -> Ortopedi
+    (498, 18),  # RSV -> Enfeksiyon Hastalıkları
+    (499, 18),  # Ruam Hastalığı -> Enfeksiyon Hastalıkları
+    (500, 17),  # Saçkıran -> Dermatoloji
+    (501, 22),  # Safra Kesesi İltihabı -> Genel Cerrahi
+    (502, 35),  # Safra Kesesi Kanseri -> Onkoloji
+    (503, 22),  # Safra Kesesi Taşı -> Genel Cerrahi
+    (504, 35),  # Safra Yolu Kanseri -> Onkoloji
+    (505, 17),  # Sakal Kıran -> Dermatoloji
+    (506, 18),  # Salmonella -> Enfeksiyon Hastalıkları
+    (507, 1),  # Saman Nezlesi -> Alerji ve İmmünoloji
+    (508, 25),  # Sarı Nokta Hastalığı -> Göz Hastalıkları
+    (509, 24),  # Sarkoidoz -> Göğüs Hastalıkları
+    (510, 17),  # Seboreik Dermatit -> Dermatoloji
+    (511, 17),  # Sedef Hastalığı -> Dermatoloji
+    (512, 11),  # Serebral Palsi -> Çocuk Nörolojisi
+    (513, 34),  # Serebrovasküler Hastalıklar -> Nöroloji
+    (514, 38),  # Serotonin Sendromu -> Psikiyatri
+    (515, 41),  # Sertleşme Bozukluğu -> Üroloji
+    (516, 21),  # SIBO -> Gastroenteroloji
+    (517, 2),  # Sırt Fıtığı -> Beyin ve Sinir Cerrahisi
+    (518, 18),  # Sıtma -> Enfeksiyon Hastalıkları
+    (519, 24),  # Silikozis -> Göğüs Hastalıkları
+    (520, 32),  # Sinüzit -> KBB
+    (521, 33),  # Sistinozis -> Nefroloji
+    (522, 41),  # Sistit -> Üroloji
+    (523, 34),  # Siyatik -> Nöroloji
+    (524, 40),  # Sjögren sendromu -> Romatoloji
+    (525, 25),  # Sklerit -> Göz Hastalıkları
+    (526, 40),  # Skleroderma -> Romatoloji
+    (527, 27),  # Skorbüt hastalığı -> İç Hastalıkları
+    (528, 34),  # SMA Hastalığı -> Nöroloji
+    (529, 15),  # Soğuk Havale -> Çocuk Sağlığı ve Hastalıkları
+    (530, 24),  # Solunum Yetmezliği -> Göğüs Hastalıkları
+    (531, 38),  # Somatoform Bozukluk -> Psikiyatri
+    (532, 34),  # Spastisite -> Nöroloji
+    (533, 2),  # Spina Bifida -> Beyin ve Sinir Cerrahisi
+    (534, 25),  # Stargardt Hastalığı -> Göz Hastalıkları
+    (535, 36),  # Stres Kırığı -> Ortopedi
+    (536, 18),  # Suçiçeği -> Enfeksiyon Hastalıkları
+    (537, 25),  # Şalazyon -> Göz Hastalıkları
+    (538, 18),  # Şap Hastalığı -> Enfeksiyon Hastalıkları
+    (539, 25),  # Şaşılık -> Göz Hastalıkları
+    (540, 38),  # Şizofreni -> Psikiyatri
+    (541, 38),  # Şizotipal Kişilik Bozukluk -> Psikiyatri
+    (542, 34),  # Tarsal Tünel Sendromu -> Nöroloji
+    (543, 31),  # Taşikardi -> Kardiyoloji
+    (544, 37),  # Tavşan Dudak -> Plastik Cerrahi
+    (545, 25),  # Tavuk karası hastalığı -> Göz Hastalıkları
+    (546, 34),  # Tay-Sachs Hastalığı -> Nöroloji
+    (547, 17),  # Telenjiektazi -> Dermatoloji
+    (548, 17),  # Telogen Effluvium -> Dermatoloji
+    (549, 41),  # Testis İltihabı -> Üroloji
+    (550, 35),  # Testis Kanseri -> Onkoloji
+    (551, 41),  # Testis Torsiyonu -> Üroloji
+    (552, 18),  # Tetanoz -> Enfeksiyon Hastalıkları
+    (553, 36),  # Tetik Parmak -> Ortopedi
+    (554, 35),  # Tırnak Tümörü -> Onkoloji
+    (555, 18),  # Tifo -> Enfeksiyon Hastalıkları
+    (556, 35),  # Timus Bezi Kanseri -> Onkoloji
+    (557, 19),  # Tip 1 Diyabet -> Endokrinoloji
+    (558, 19),  # Tip 2 Diyabet -> Endokrinoloji
+    (559, 19),  # Tiroid -> Endokrinoloji
+    (560, 35),  # Tiroid Kanseri -> Onkoloji
+    (561, 18),  # Toksoplazma -> Enfeksiyon Hastalıkları
+    (562, 32),  # Tonsilit -> KBB
+    (563, 17),  # Topsy-Turvy Sendromu -> Dermatoloji
+    (564, 36),  # Topuk Dikeni -> Ortopedi
+    (565, 34),  # Torasik Outlet Sendromu -> Nöroloji
+    (566, 36),  # Tortikolis -> Ortopedi
+    (567, 34),  # Tourette Sendromu -> Nöroloji
+    (568, 25),  # Trahom hastalığı -> Göz Hastalıkları
+    (569, 34),  # Transvers Miyelit -> Nöroloji
+    (570, 38),  # Travma Sonrası Stres Bozukluğu -> Psikiyatri
+    (571, 34),  # Tremor -> Nöroloji
+    (572, 34),  # Trigeminal Nevralji -> Nöroloji
+    (573, 29),  # Trikomoniyaz -> Kadın Hastalıkları ve Doğum
+    (574, 38),  # Trikotillomani -> Psikiyatri
+    (575, 32),  # Trismus -> KBB
+    (576, 18),  # Tularemi -> Enfeksiyon Hastalıkları
+    (577, 4),  # Turner Sendromu -> Çocuk Endokrinolojisi
+    (578, 18),  # Tüberküloz -> Enfeksiyon Hastalıkları
+    (579, 35),  # Tükürük Bezi Kanseri -> Onkoloji
+    (580, 26),  # Tüylü Hücreli Lösemi -> Hematoloji
+    (581, 17),  # Uçuk Hastalığı -> Dermatoloji
+    (582, 29),  # Ureaplasma -> Kadın Hastalıkları ve Doğum
+    (583, 24),  # Uyku Apnesi -> Göğüs Hastalıkları
+    (584, 34),  # Uyku terörü -> Nöroloji
+    (585, 17),  # Uyuz Hastalığı -> Dermatoloji
+    (586, 21),  # Ülser -> Gastroenteroloji
+    (587, 41),  # Üreter Taşı -> Üroloji
+    (588, 41),  # Üretra Darlığı -> Üroloji
+    (589, 35),  # Üretra Kanseri -> Onkoloji
+    (590, 25),  # Üveit -> Göz Hastalıkları
+    (591, 29),  # Vajinal Mantar -> Kadın Hastalıkları ve Doğum
+    (592, 29),  # Vajinismus -> Kadın Hastalıkları ve Doğum
+    (593, 41),  # Varikosel -> Üroloji
+    (594, 30),  # Varis -> Kalp ve Damar Cerrahisi
+    (595, 40),  # Vaskülit -> Romatoloji
+    (596, 18),  # Veba -> Enfeksiyon Hastalıkları
+    (597, 9),  # Ventriküler Septal Defekt -> Çocuk Kardiyolojisi
+    (598, 31),  # Ventriküler Taşikardi -> Kardiyoloji
+    (599, 17),  # Vitiligo -> Dermatoloji
+    (600, 26),  # Von Willebrand hastalığı -> Hematoloji
+    (601, 35),  # Vulva Kanseri -> Onkoloji
+    (602, 29),  # Vulvar Egzama -> Kadın Hastalıkları ve Doğum
+    (603, 29),  # Vulvodini -> Kadın Hastalıkları ve Doğum
+    (604, 24),  # Vurgun -> Göğüs Hastalıkları
+    (605, 26),  # Waldenström Makroglobulinemisi -> Hematoloji
+    (606, 18),  # Whipple Hastalığı -> Enfeksiyon Hastalıkları
+    (607, 12),  # Wilms Tümörü -> Çocuk Onkolojisi
+    (608, 21),  # Wilson Hastalığı -> Gastroenteroloji
+    (609, 31),  # Wolf Parkinson White Sendromu -> Kardiyoloji
+    (610, 38),  # Yalan Söyleme Hastalığı -> Psikiyatri
+    (611, 35),  # Yemek Borusu Kanseri -> Onkoloji
+    (612, 15),  # Yenidoğan Sarılığı -> Çocuk Sağlığı ve Hastalıkları
+    (613, 18),  # Yılancık Hastalığı -> Enfeksiyon Hastalıkları
+    (614, 29),  # Yumurta Rezervi Düşüklüğü -> Kadın Hastalıkları ve Doğum
+    (615, 35),  # Yumurtalık Kanseri -> Onkoloji
+    (616, 29),  # Yumurtalık Kisti -> Kadın Hastalıkları ve Doğum
+    (617, 35),  # Yumuşak Doku Sarkomu -> Onkoloji
+    (618, 31),  # Yüksek Tansiyon -> Kardiyoloji
+    (619, 34),  # Yüz Felci -> Nöroloji
+    (620, 24),  # Zatürre -> Göğüs Hastalıkları
+    (621, 4),  # Zellweger Sendromu -> Çocuk Endokrinolojisi
+    (622, 32),  # Zenker Divertikülü -> KBB
+    (623, 21),  # Zollinger-Ellison Sendromu -> Gastroenteroloji
+    (624, 17),
+]
 
 
 def load_base_html(url):
@@ -730,7 +747,7 @@ def follow_and_find(link, target_tag, target_class):
 
 ##-------------- ** -------------
 def get_bolum_by_hastalik_no(hastalik_no):
-    for hastalik, bolum in hastalik_bolum_eslesme:
+    for hastalik, bolum in hastalik_bolum_eslesmeleri:
         if hastalik == hastalik_no:
             return bolumler.get(bolum, "Bilinmeyen Bölüm")
     return "Hastalık bulunamadı"
@@ -754,6 +771,45 @@ def get_full_desc(main_div, search_text):
                     li_texts = [li.get_text(strip=True) for li in sib.find_all("li")]
                     paragraphs.append(", ".join(li_texts))
         return paragraphs
+
+
+def get_each_QA(main_div, search_text):
+
+    # sık sorulan sorular içeren h2 yi bul.
+    h2_tag = main_div.find("h2", string=re.compile(search_text, re.IGNORECASE))
+
+    if h2_tag == None:
+        return ""
+    else:
+        QA_list = []
+
+        # h2 den sonraki aynı seviyedeki tag leri dön
+        for sib in h2_tag.next_siblings:
+            if isinstance(sib, Tag):
+                if sib.name == "h2":
+                    break  # sonraki h2 geldi -> çık
+
+                if sib.name == "h3":
+
+                    question = sib.get_text()
+
+                    # h3'ün cevabı genellikle bir sonraki p olur
+                    answer_tag = sib.find_next_sibling("p")
+                    if answer_tag:
+                        answer = answer_tag.get_text()
+                        qa = {"q": question, "a": answer}
+                        QA_list.append(qa)
+
+        if len(QA_list) < 1:
+            return ""
+
+        qa_text_list = []
+
+        for qa in QA_list:
+            qa_text = f"{qa['q']}: {qa['a']}"
+            qa_text_list.append(qa_text)
+
+        return qa_text_list
 
 
 def save_table(data, path, fmt="csv"):
@@ -799,6 +855,7 @@ if __name__ == "__main__":
             "teshis": "",
             "tedavi": "",
             "bolum": "",
+            "soru_cevap": "",
             "link": full_link,
         }
         full_data_list.append(dict_item)
@@ -807,6 +864,10 @@ if __name__ == "__main__":
 
         # hastalığın sayfasına git ve oradaki temel alınacak tag i al
         full_div = follow_and_find(full_link_list[i], "div", "article")
+
+        if full_div == None:
+            print("\n--------- ******** Bulunamadı ********* ----------\n")
+            continue
 
         # Nedir kısmını topla
         nedir_desc = " ".join(get_full_desc(full_div, "nedir?"))
@@ -832,19 +893,22 @@ if __name__ == "__main__":
             get_full_desc(full_div, "tanısı nasıl konulur?")
         )
 
-        # Teşhisi kısmını topla
+        # Tedavi kısmını topla
         tedavi_desc = " ".join(get_full_desc(full_div, "tedavisi Nasıl Yapılır?"))
         tedavi_desc = tedavi_desc + " ".join(
             get_full_desc(full_div, "Nasıl Tedavi Edilir?")
         )
+
+        # Sık sorulan sorular kısmını topla
+        qa_list = " ".join(get_each_QA(full_div, "sık sorulan sorular"))
+        print(qa_list + "\n")
 
         full_data_list[i]["nedir"] = nedir_desc
         full_data_list[i]["belirtiler"] = belirtiler_desc
         full_data_list[i]["türleri"] = turleri_desc
         full_data_list[i]["teshis"] = teshisi_desc
         full_data_list[i]["tedavi"] = tedavi_desc
-        full_data_list[i]["bolum"] = get_bolum_by_hastalik_no(i + 1)
-
-        print(nedir_desc, "\n")
+        full_data_list[i]["bolum"] = get_bolum_by_hastalik_no(i)
+        full_data_list[i]["soru_cevap"] = qa_list
 
     save_table(full_data_list, "output/hastaliklar_detayli_listesi.csv")
