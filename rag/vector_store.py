@@ -91,14 +91,20 @@ class HealthVectorStore:
         filter_bolum: Sadece belirli bölümden ara
         """
 
-        # Sorguyu embedding'e çevir
+        # Sorguyu embedding'e çeviriyor , sayısal olarak
         query_embedding = self.embedder.encode_text(query)
 
         # ChromaDB'de ara
         where_filter = None
+        
+        
+        # eğer veriler arasında özel bi arama yapılması gerekiyorsa ona göre ek sorgular da yapılabilir
         if filter_bolum:
             where_filter = {"bolum": filter_bolum}
 
+        # şu an sadece en alakalı gelen ilk 3 tane sonuç üzerinden cevap üretiliyor
+        # Bundan sonraki amaç bu sonuçların ilk 10 tanesi ilk olarak toplandıktan sonra 
+        # bu 10 tanesinin tekrar filtrelenmesi ile en iyi şekilde sonuçların üretilmesi sağlanacak
         results = self.collection.query(
             query_embeddings=[query_embedding.tolist()],
             n_results=n_results,
@@ -148,9 +154,7 @@ class HealthVectorStore:
 def build_vector_database():
     """Ana fonksiyon: Veriyi yükle ve vector DB oluştur"""
 
-    print("=" * 80)
     print("🚀 VECTOR DATABASE OLUŞTURULUYOR")
-    print("=" * 80)
 
     # 1. İşlenmiş veriyi yükle
     processed_data_path = Path("data/processed/diseases_processed.json")
@@ -167,7 +171,7 @@ def build_vector_database():
 
     # 2. Vector store oluştur
     vector_store = HealthVectorStore()
-    vector_store.create_collection(reset=True)  # Sıfırdan başla
+    vector_store.create_collection(reset=True)  # Sıfırdan başlasın 
 
     # 3. Dökümanları ekle
     vector_store.add_documents(documents)
@@ -176,10 +180,6 @@ def build_vector_database():
     vector_store.get_collection_stats()
 
     # 5. Test araması
-    print("\n" + "=" * 80)
-    print("🧪 TEST ARAMALARI")
-    print("=" * 80)
-
     test_queries = ["Başım çok ağrıyor", "Göğsümde ağrı var", "Saçlarım dökülüyor"]
 
     for query in test_queries:

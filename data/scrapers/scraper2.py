@@ -9,17 +9,6 @@ import cloudscraper
 
 soup = None
 
-
-""" 
-
-Hastalık isimleri ve bu isimlerin açıklamasından çıkarılan başlıklar ;
-- nedir?
-- belirtileri nelerdir?
-- türleri nelerdir ?
-- nasıl teşhis edilir?
-- nasıl tedavi edilir? 
-
-"""
 # Bölüm isimleri
 bolumler = {
     0: "Acil Tıp",

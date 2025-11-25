@@ -10,14 +10,14 @@ def main():
 
     print(
         """
-    ╔═══════════════════════════════════════════════════════════╗
-    ║                                                           ║
-    ║               SAĞLIK ASİSTANI - RAG SİSTEMİ               ║
-    ║                                                           ║
-    ║   Hastane bölümü yönlendirme asistanı                     ║
-    ║   626 hastalık verisi ile sorulara yanıt verebilmektedir. ║
-    ║                                                           ║
-    ╚═══════════════════════════════════════════════════════════╝
+
+
+                  SAĞLIK ASİSTANI - RAG SİSTEMİ               
+                                                               
+               Hastane bölümü yönlendirme asistanı                     
+       626 hastalık verisi ile sorulara yanıt verebilmektedir. 
+                                                               
+
     """
     )
 

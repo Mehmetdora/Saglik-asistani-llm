@@ -13,7 +13,8 @@ class HealthRAGAssistant:
         self.vector_store.create_collection(reset=False)  # Mevcut DB'yi kullan
 
         # System prompt
-        self.system_prompt = """Sen Türkiye'deki hastaneler için bir sağlık yönlendirme asistanısın.
+        self.system_prompt = """
+            Sen Türkiye'deki hastaneler için bir sağlık yönlendirme asistanısın.
             GÖREVİN:
             - Hastalara hangi hastane bölümüne gitmeleri gerektiğini söylemek
             - Verilen tıbbi bilgilere dayanarak cevap vermek
@@ -37,10 +38,10 @@ class HealthRAGAssistant:
         """Sorguya en alakalı dökümanları bul"""
 
         print(f"🔍 Aranıyor: '{query}'")
+        
+        
         results = self.vector_store.search(query, n_results=n_results)
-
-        print("Formatted Results : \n")
-        print(results)
+ 
 
         print(f"📚 {len(results)} alakalı döküman bulundu:")
         for i, res in enumerate(results, 1):
@@ -118,7 +119,7 @@ class HealthRAGAssistant:
         context = self.build_context(retrieved_docs)
         
         print(f"""
-              \n 🔑 Gelen Ana veri: \n {retrieved_docs}\n\n
+              \n ***** Gelen Ana veri: \n {retrieved_docs}\n\n
               Temizlenmiş Veriler : \n {context}
               """)
 
@@ -150,9 +151,7 @@ class HealthRAGAssistant:
     def interactive_session(self):
         """Interaktif soru-cevap oturumu"""
 
-        print("\n" + "=" * 80)
         print("🏥 SAĞLIK ASİSTANI - İNTERAKTİF OTURUM")
-        print("=" * 80)
         print("Soru sorun veya 'çıkış' yazın\n")
 
         while True:
@@ -170,7 +169,7 @@ class HealthRAGAssistant:
                 print("\n")
 
             except KeyboardInterrupt:
-                print("\n\n👋 Görüşmek üzere!")
+                print("\n\nOturum sonlandırılmıştır !")
                 break
             except Exception as e:
                 print(f"\n❌ Hata Var: {e}\n")
