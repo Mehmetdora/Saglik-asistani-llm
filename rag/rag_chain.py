@@ -6,7 +6,7 @@ from .vector_store import HealthVectorStore
 class HealthRAGAssistant:
 
     def __init__(self, model_name="llama3.2:3b"):
-        print("Sağlık RAG Asistanı başlatılıyor...")
+        print("---> Sağlık RAG Asistanı başlatılıyor...")
 
         self.model_name = model_name
         self.vector_store = HealthVectorStore()
@@ -32,18 +32,18 @@ class HealthRAGAssistant:
             Sen: "Baş ağrısı için Nöroloji bölümüne başvurmanızı öneririm. Nöroloji beyin ve sinir sistemi hastalıklarıyla ilgilenir. Eğer ağrı çok şiddetliyse veya ani başladıysa, acil servise gitmelisiniz. Bu bir tıbbi tavsiye değildir, mutlaka doktora danışın."
             """
 
-        print("✅ RAG Asistanı hazır!\n")
+        print("---> RAG Asistanı hazır!\n")
 
     def retrieve_context(self, query: str, n_results=3) -> List[Dict]:
         """Sorguya en alakalı dökümanları bul"""
 
-        print(f"🔍 Aranıyor: '{query}'")
+        print(f"---> Aranıyor: '{query}'")
         
         
         results = self.vector_store.search(query, n_results=n_results)
  
 
-        print(f"📚 {len(results)} alakalı döküman bulundu:")
+        print(f"---> {len(results)} alakalı döküman bulundu:")
         for i, res in enumerate(results, 1):
             hastalik = res.get("metadata", {}).get("hastalik") or res.get("id")
             print(
@@ -51,24 +51,18 @@ class HealthRAGAssistant:
                 f"(Benzerlik: {res['similarity']:.2f})"
             )
 
+
+            print(res)
+
+
         return results
 
     def build_context(self, retrieved_docs: List[Dict]) -> str:
         """Bulunan dökümanları LLM için context'e çevir"""
 
         context_parts = []
-
         for doc in retrieved_docs:
-            h = doc.get("metadata", {}).get("hastalik", "")
-            b = doc.get("metadata", {}).get("bolum", "")
-            context_parts.append(
-                f"""
-                HASTALIK: {h}
-                BÖLÜM: {b}
-                BİLGİ: {doc['text'][:500]}  
-                ---
-                """
-            )
+            context_parts.append(doc["text"])
 
         return "\n".join(context_parts)
 
@@ -86,7 +80,7 @@ class HealthRAGAssistant:
                     CEVAP (Kısa ve net, 3-4 cümle):
                 """
 
-        print("\n💬 Cevap üretiliyor...")
+        print("\n---> Cevap üretiliyor...")
 
         response = ollama.chat(
             model=self.model_name, messages=[{"role": "user", "content": prompt}]
@@ -97,42 +91,31 @@ class HealthRAGAssistant:
     def ask(self, query: str, n_context=3, verbose=True) -> Dict:
         """
         Ana fonksiyon: Soru sor, cevap al
-
-        Returns:
-            {
-                'query': kullanıcı sorusu,
-                'answer': LLM cevabı,
-                'sources': kullanılan kaynaklar,
-                'retrieved_docs': bulunan dökümanlar
-            }
         """
 
-        if verbose:
-            print("\n" + "=" * 80)
-            print(f"❓ SORU: {query}")
-            print("=" * 80)
+
 
         # 1. Retrieval - Alakalı dökümanları bul
         retrieved_docs = self.retrieve_context(query, n_results=n_context)
 
         # 2. Context oluştur
         context = self.build_context(retrieved_docs)
-        
-        print(f"""
-              \n ***** Gelen Ana veri: \n {retrieved_docs}\n\n
-              Temizlenmiş Veriler : \n {context}
-              """)
+
 
         # 3. Generation - Cevap üret
         answer = self.generate_answer(query, context)
 
         if verbose:
             print("\n" + "=" * 80)
-            print("✅ CEVAP:")
+            print(f"---> SORU: {query}")
+            print("=" * 80)
+
+        if verbose:
+            print("\n" + "=" * 80)
+            print("******----->>> CEVAP:")
             print("=" * 80)
             print(answer)
-            print
-            print("\n📖 KAYNAKLAR:")
+            print("\n*****----->>> KAYNAKLAR:")
             for i, doc in enumerate(retrieved_docs, 1):
                 src_hastalik = doc.get("metadata", {}).get("hastalik") or doc.get("id")
                 src_bolum = doc.get("metadata", {}).get("bolum", "")
@@ -159,7 +142,7 @@ class HealthRAGAssistant:
                 query = input("👤 Siz: ").strip()
 
                 if query.lower() in ["çıkış", "exit", "quit", "q"]:
-                    print("\n👋 Görüşmek üzere!")
+                    print("\n****----->>> Görüşmek üzere!")
                     break
 
                 if not query:
@@ -169,7 +152,7 @@ class HealthRAGAssistant:
                 print("\n")
 
             except KeyboardInterrupt:
-                print("\n\nOturum sonlandırılmıştır !")
+                print("\n\n---> Oturum sonlandırılmıştır !")
                 break
             except Exception as e:
                 print(f"\n❌ Hata Var: {e}\n")

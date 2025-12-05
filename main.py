@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 # src klasörünü Python path'e ekle
-sys.path.insert(0, str(Path(__file__).parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent / "rag"))
 from rag.rag_chain import HealthRAGAssistant
 
 
@@ -10,12 +10,12 @@ def main():
 
     print(
         """
-
-
                   SAĞLIK ASİSTANI - RAG SİSTEMİ               
-                                                               
+                           
                Hastane bölümü yönlendirme asistanı                     
        626 hastalık verisi ile sorulara yanıt verebilmektedir. 
+       Eğer yeni veri eklenmiş veya silinmişse veya içerkleri düzenlenmişse , vektor_store.py çalıştırılarak tüm parçalar(chunks)
+       veritabanına tekrar kaydedilmelidir.
                                                                
 
     """

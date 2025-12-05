@@ -42,24 +42,12 @@ class HealthVectorStore:
         )
 
         print(
-            f"📚 Collection: {self.collection_name} (Döküman sayısı: {self.collection.count()})"
+            f"****---->>> Collection: {self.collection_name} (Döküman sayısı: {self.collection.count()})"
         )
 
     def add_documents(self, documents: List[Dict], batch_size=100):
-        """
-        Dökümanları vector DB'ye ekle
 
-        documents: [
-            {
-                'id': 'migren',
-                'text': 'Migren baş ağrısı...',
-                'metadata': {'bolum': 'Nöroloji', ...}
-            },
-            ...
-        ]
-        """
-
-        print(f"\n📥 {len(documents)} döküman ekleniyor...")
+        print(f"\n****----->>> {len(documents)} döküman ekleniyor...")
 
         # Batch'lerle ekle (bellek tasarrufu)
         for i in range(0, len(documents), batch_size):
@@ -79,8 +67,8 @@ class HealthVectorStore:
 
             print(f"  ✓ {i+len(batch)}/{len(documents)} eklendi")
 
-        print(f"✅ Tüm dökümanlar eklendi!")
-        print(f"📊 Toplam: {self.collection.count()} döküman")
+        print(f"---> Tüm dökümanlar eklendi!")
+        print(f"---> Toplam: {self.collection.count()} döküman")
 
     def search(self, query: str, n_results=5, filter_bolum=None):
         """
@@ -167,7 +155,7 @@ def build_vector_database():
     with open(processed_data_path, "r", encoding="utf-8") as f:
         documents = json.load(f)
 
-    print(f"✅ {len(documents)} döküman yüklendi")
+    print(f"***------>>> {len(documents)} döküman yüklendi")
 
     # 2. Vector store oluştur
     vector_store = HealthVectorStore()
@@ -195,7 +183,7 @@ def build_vector_database():
             print(f"     Metin: {result['text'][:100]}...")
 
     print("\n" + "=" * 80)
-    print("✅ VECTOR DATABASE HAZIR!")
+    print("***------>>> VECTOR DATABASE HAZIR!")
     print("=" * 80)
 
 
